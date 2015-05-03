@@ -1,0 +1,22 @@
+OASISFormat: 0.4
+Name:        jpeg
+Version:     0.1
+Synopsis:    Simple JPEG bindings for libjpeg/libturbojpeg for getting RGB
+  images from JPEG data
+Authors:     Erkki Seppälä
+License:     MIT
+Plugins:     META (0.4)
+
+Library jpeg
+  Path:       src
+  BuildTools: ocamlbuild
+  BuildDepends: bigarray
+  Modules:    Jpeg
+  CSources:   jpeg-c.c
+  CCOpt:      -DTURBOJPEG=1
+  CCLib:      -lturbojpeg
+  
+Flag use_libjpeg
+  
+Flag use_turbojpeg
+  
